@@ -1,4 +1,32 @@
 #header {
   background-color: #ba0305;
   color: #ffffff;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header img {
+  width: 50px;
+  height: 50px;
+}
+
+#header form {
+  margin-left: -400px;
+  width: auto;
+}
+
+#header input[type="text"] {
+  padding: 5px 5px 5px 10px;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+}
+
+#header div {
+  margin-right: 5px;
 }

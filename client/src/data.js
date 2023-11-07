@@ -10,7 +10,7 @@ const allMovies = [ {
 		id: 2,
 		// image: image2,
 		title: "Avatar 2",
-		originalTitle: "Avatar",
+		originalTitle: "Avatar 2",
 		age: "+13",
 		tags: "Vtipný * Napínavý * Rodina",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",

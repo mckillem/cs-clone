@@ -77,7 +77,7 @@ function SearchBar({ placeholder, data }) {
 					{filteredActors.slice(0, 15).map((value, key) => {
 						return (
 							<>
-								{/*todo: odkaz je na id filmu ne na seznam herců*/}
+								{/*todo: odkaz je na id filmu ne na seznam filmů.*/}
 								<a className="dataItem" href={value.id} target="_self">
 									<p>{value.actors}</p>
 								</a>

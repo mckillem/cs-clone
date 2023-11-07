@@ -5,6 +5,8 @@ const films = [ {
 		originalTitle: "Avatar",
 		age: "+13",
 		tags: "Vtipný * Napínavý * Rodina",
+	actors: "",
+
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 2,
@@ -13,6 +15,8 @@ const films = [ {
 		originalTitle: "Avatar 2",
 		age: "+13",
 		tags: "Vtipný * Napínavý * Rodina",
+	actors: "",
+
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 3,
@@ -21,6 +25,8 @@ const films = [ {
 		originalTitle: "Rocknrolla",
 		age: "+16",
 		tags: "Gangster * Napínavý * Násilí",
+	actors: "",
+
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 4,
@@ -29,6 +35,8 @@ const films = [ {
 		originalTitle: "The Patriot",
 		age: "+16",
 		tags: "Gangster * Napínavý * Násilí",
+	actors: "",
+
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 5,
@@ -37,6 +45,8 @@ const films = [ {
 		originalTitle: "Mr. Harrigan's Phone ",
 		age: "+16",
 		tags: "Gangster * Napínavý * Násilí",
+	actors: "",
+
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 6,
@@ -45,14 +55,17 @@ const films = [ {
 		originalTitle: "The Intern",
 		age: "+16",
 		tags: "Rodinný * Napínavý * Romantický",
+	actors: "",
+
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 7,
 		// image: image7,
-		title: "Život",
+		title: "Oslava Sylvestru",
 		originalTitle: "Life",
 		age: "+13",
 		tags: "Vesmír * Napínavý * Nebezpečí",
+		actors: "",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 8,
@@ -61,6 +74,7 @@ const films = [ {
 		originalTitle: "Billion Dollar Brain",
 		age: "+13",
 		tags: "IT * Napínavý",
+		actors: "Sylvester Bocci",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 9,
@@ -69,6 +83,7 @@ const films = [ {
 		originalTitle: "Rocky",
 		age: "+16",
 		tags: "Dokument * Napínavý",
+		actors: "Sylvester Stallone",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 10,
@@ -77,6 +92,7 @@ const films = [ {
 		originalTitle: "The Expendables 2",
 		age: "+13",
 		tags: "Gangster * Napínavý * Násilí",
+		actors: "Sylvester Stallone",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	},
 ]

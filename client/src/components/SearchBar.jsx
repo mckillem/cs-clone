@@ -1,31 +1,41 @@
 import { useState } from "react";
 import "./SearchBar.scss";
-import {Main} from "../pages/Main";
 // import SearchIcon from "@material-ui/icons/Search";
 // import CloseIcon from "@material-ui/icons/Close";
 
 function SearchBar({ placeholder, data }) {
-	const [filteredData, setFilteredData] = useState([]);
+	const [filteredFilms, setFilteredFilms] = useState([]);
+	const [filteredActors, setFilteredActors] = useState([]);
 	const [wordEntered, setWordEntered] = useState("");
 
 	const handleFilter = (event) => {
 		const searchWord = event.target.value;
 		setWordEntered(searchWord);
-		const newFilter = data.filter((value) => {
+		const filmsFilter = data.filter((value) => {
 			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : null;
 		});
 
+		// todo: pokud najdeš herce, tak vrať seznam filmů, ve kterých hraje
+		const actorsFilter = data.filter((value) => {
+			// pokud najdeš herce
+			const actors = value.actors.toLowerCase().includes(searchWord.toLowerCase());
+			// tak vrať seznam filmů, ve kterých hraje
+			return actors;
+		});
+
 		if (searchWord === "") {
-			setFilteredData([]);
+			setFilteredFilms([]);
+			setFilteredActors([]);
 		} else {
-			setFilteredData(newFilter);
+			setFilteredFilms(filmsFilter);
+			setFilteredActors(actorsFilter);
 		}
 	};
 
-	const clearInput = () => {
-		setFilteredData([]);
-		setWordEntered("");
-	};
+	// const clearInput = () => {
+	// 	setFilteredData([]);
+	// 	setWordEntered("");
+	// };
 
 	return (
 		<div className="search">
@@ -44,15 +54,31 @@ function SearchBar({ placeholder, data }) {
 				{/*	)}*/}
 				{/*</div>*/}
 			</div>
-			{filteredData.length !== 0 && (
+			{filteredFilms.length !== 0 && (
 				<div className="dataResult">
-					{filteredData.slice(0, 15).map((value, key) => {
+					<h3>Filmy</h3>
+					{filteredFilms.slice(0, 15).map((value, key) => {
 						return (
 							<>
 								{/*<Main data={value.title}></Main>*/}
 								{/*<a className="dataItem" href={value.link} target="_blank">*/}
 								<a className="dataItem" href={value.id} target="_self">
-								 	<p>{value.title} </p>
+								 	<p>{value.title}</p>
+								</a>
+							</>
+						);
+					})}
+				</div>
+			)}
+
+			{filteredActors.length !== 0 && (
+				<div className="dataResult">
+					<h3>Herci</h3>
+					{filteredActors.slice(0, 15).map((value, key) => {
+						return (
+							<>
+								<a className="dataItem" href={value.id} target="_self">
+									<p>{value.actors}</p>
 								</a>
 							</>
 						);

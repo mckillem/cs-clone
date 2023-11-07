@@ -18,7 +18,7 @@ function SearchBar({ placeholder, data }) {
 		// todo: pokud najdeš herce, tak vrať seznam filmů, ve kterých hraje
 		const actorsFilter = data.filter((value) => {
 			// pokud najdeš herce
-			const actors = value.actors.toLowerCase().includes(searchWord.toLowerCase());
+			const actors = value.actors.toLowerCase().includes(searchWord.toLowerCase()) ? value.title : null;
 			// tak vrať seznam filmů, ve kterých hraje
 			return actors;
 		});

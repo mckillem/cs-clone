@@ -1,4 +1,4 @@
-const allMovies = [ {
+const films = [ {
 		id: 1,
 		// image: image1,
 		title: "Avatar",
@@ -80,4 +80,4 @@ const allMovies = [ {
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	},
 ]
-export default allMovies
+export default films

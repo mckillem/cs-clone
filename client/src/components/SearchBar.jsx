@@ -12,7 +12,7 @@ function SearchBar({ placeholder, data }) {
 		const searchWord = event.target.value;
 		setWordEntered(searchWord);
 		const newFilter = data.filter((value) => {
-			return value.title.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : null;
+			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : null;
 		});
 
 		if (searchWord === "") {

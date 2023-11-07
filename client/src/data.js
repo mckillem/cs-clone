@@ -4,7 +4,6 @@ const allMovies = [ {
 		title: "Avatar",
 		age: "+13",
 		tags: "Vtipný * Napínavý * Rodina",
-		link: "avatar",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 2,
@@ -12,8 +11,6 @@ const allMovies = [ {
 		title: "Avatar 2",
 		age: "+13",
 		tags: "Vtipný * Napínavý * Rodina",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 3,
@@ -21,7 +18,6 @@ const allMovies = [ {
 		title: "Rocknrolla",
 		age: "+16",
 		tags: "Gangster * Napínavý * Násilí",
-		link: "rocknrolla",
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 4,
@@ -29,8 +25,6 @@ const allMovies = [ {
 		title: "Patriot",
 		age: "+16",
 		tags: "Gangster * Napínavý * Násilí",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 5,
@@ -38,8 +32,6 @@ const allMovies = [ {
 		title: "Telefon pana Harrigana",
 		age: "+16",
 		tags: "Gangster * Napínavý * Násilí",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 6,
@@ -47,8 +39,6 @@ const allMovies = [ {
 		title: "Stážista",
 		age: "+16",
 		tags: "Rodinný * Napínavý * Romantický",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 7,
@@ -56,8 +46,6 @@ const allMovies = [ {
 		title: "Život",
 		age: "+13",
 		tags: "Vesmír * Napínavý * Nebezpečí",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 8,
@@ -65,8 +53,6 @@ const allMovies = [ {
 		title: "Kód za miliardu dolarů",
 		age: "+13",
 		tags: "IT * Napínavý",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 9,
@@ -74,8 +60,6 @@ const allMovies = [ {
 		title: "Pracháči",
 		age: "+16",
 		tags: "Dokument * Napínavý",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 10,
@@ -83,8 +67,6 @@ const allMovies = [ {
 		title: "Whoami",
 		age: "+13",
 		tags: "Gangster * Napínavý * Násilí",
-	link: "avatar",
-
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	},
 ]

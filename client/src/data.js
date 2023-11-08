@@ -94,7 +94,7 @@ const films = [ {
 		originalTitle: "Rocky",
 		age: "+16",
 		tags: "Dokument * Napínavý",
-		actors: "Sylvester Stallone",
+		actors: 100,
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 10,
@@ -103,7 +103,7 @@ const films = [ {
 		originalTitle: "The Expendables 2",
 		age: "+13",
 		tags: "Gangster * Napínavý * Násilí",
-		actors: "Sylvester Stallone",
+		actors: 100,
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	},
 ]

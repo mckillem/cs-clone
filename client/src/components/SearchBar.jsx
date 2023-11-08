@@ -3,7 +3,7 @@ import "./SearchBar.scss";
 // import SearchIcon from "@material-ui/icons/Search";
 // import CloseIcon from "@material-ui/icons/Close";
 
-function SearchBar({ placeholder, data }) {
+function SearchBar({ placeholder, data, actors }) {
 	const [filteredFilms, setFilteredFilms] = useState([]);
 	const [filteredActors, setFilteredActors] = useState([]);
 	const [wordEntered, setWordEntered] = useState("");
@@ -16,9 +16,10 @@ function SearchBar({ placeholder, data }) {
 		});
 
 		// todo: pokud najdeš herce, tak vrať seznam filmů, ve kterých hraje
-		const actorsFilter = data.filter((value) => {
+		const actorsFilter = actors.filter((value) => {
 			// pokud najdeš herce
-			const actors = value.actors.toLowerCase().includes(searchWord.toLowerCase()) ? value.title : null;
+			// const actors = value.actors.toLowerCase().includes(searchWord.toLowerCase()) ? value.title : null;
+			const actors = value.name.toLowerCase().includes(searchWord.toLowerCase());
 			// tak vrať seznam filmů, ve kterých hraje
 			return actors;
 		});
@@ -79,7 +80,7 @@ function SearchBar({ placeholder, data }) {
 							<>
 								{/*todo: odkaz je na id filmu ne na seznam filmů.*/}
 								<a className="dataItem" href={value.id} target="_self">
-									<p>{value.actors}</p>
+									<p>{value.name}</p>
 								</a>
 							</>
 						);

@@ -2,6 +2,7 @@ import "./Header.scss";
 import {useEffect, useState} from "react";
 import films from "../data";
 import SearchBar from "../components/SearchBar";
+import logo from "../logo/logos-png-8.png";
 export const Header = () => {
 	const [search, setSearch] = useState("");
 	const [filteredFilms, setFilteredFilms] = useState([])
@@ -19,9 +20,11 @@ export const Header = () => {
 
 	return (
 		<div id="header">
-			<img src="../logo/logos-png-8.png" alt="logo"/>
+			<img src={logo} alt="logo"/>
 			{/*<img src="https://img.csfd.cz/documents/marketing/logos/logo-white-red/logo-white-red.svg" alt=""/>*/}
-			<SearchBar placeholder="Filmy" data={films}></SearchBar>
+			<div id="searchBar">
+				<SearchBar placeholder="Filmy" data={films}></SearchBar>
+			</div>
 			{/*<div className="search">*/}
 			{/*	<form onSubmit={formSubmit}>*/}
 			{/*		<input*/}
@@ -32,7 +35,7 @@ export const Header = () => {
 			{/*	</form>*/}
 			{/*	/!*<a href="/">Podrobné vyhledávání</a>*!/*/}
 			{/*</div>*/}
-			<div>Můj účet</div>
+			<div id="account">Můj účet</div>
 		</div>
 	);
 };

@@ -13,20 +13,28 @@
   height: 50px;
 }
 
-#header form {
+#searchBar {
   margin-left: -400px;
   width: auto;
+  z-index: 1000;
+
 }
 
-#header input[type="text"] {
-  padding: 5px 5px 5px 10px;
-}
+//#header form {
+//  margin-left: -400px;
+//  width: auto;
+//}
+//
+//#header input[type="text"] {
+//  padding: 5px 5px 5px 10px;
+//}
 
 button {
   width: 30px;
   height: 30px;
 }
 
-#header div {
+#account {
   margin-right: 5px;
+  align-self: center;
 }

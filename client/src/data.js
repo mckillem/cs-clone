@@ -85,7 +85,7 @@ const films = [ {
 		originalTitle: "Billion Dollar Brain",
 		age: "+13",
 		tags: "IT * Napínavý",
-		actors: "Sylvester Bocci",
+		actors: 101,
 		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
 	}, {
 		id: 9,

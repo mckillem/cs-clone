@@ -9,6 +9,7 @@ export const Main = ({url}) => {
 
 	parsedURL >= 100 ?
 		content = data.filter(film => {
+			// todo: vypíše seznam filmů jen u prvního herce
 			return film.actors === actors.map(actor => parsedURL === actor.id ? actor.id : null)[0];
 		}).map(film => {
 			const {id, image, title, age, tags, description} = film;
@@ -38,7 +39,7 @@ export const Main = ({url}) => {
 	return (
 		<>
 			<h1>{actor}</h1>
-			<p>{content}</p>
+			<div>{content}</div>
 		</>
 	);
 };

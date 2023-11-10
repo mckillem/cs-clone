@@ -1,10 +1,13 @@
+$white: white;
+$black: black;
+
 .searchInputs {
   margin-top: 10px;
 }
 
 .search {
   input {
-    background-color: white;
+    background-color: $white;
     border: 0;
     border-radius: 2px 0 0 2px;
     font-size: 18px;
@@ -22,7 +25,7 @@ input:focus {
   margin-top: 1px;
   width: 300px;
   height: 200px;
-  background-color: white;
+  background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   overflow: hidden;
   overflow-y: auto;
@@ -32,16 +35,12 @@ input:focus {
     height: 50px;
     display: flex;
     align-items: center;
-    color: black;
+    color: $black;
 
     p {
       margin-left: 10px;
     }
   }
-}
-
-.dataResult::-webkit-scrollbar {
-  display: none;
 }
 
 a {
@@ -53,7 +52,7 @@ a:hover {
 }
 
 h3 {
-  color: black;
+  color: $black;
   margin-left: 2px;
   margin-top: 5px;
 }

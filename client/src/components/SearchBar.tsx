@@ -1,16 +1,18 @@
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 import "./SearchBar.scss";
 
-function SearchBar({ placeholder, data, actors }: any) {
-	const [filteredFilms, setFilteredFilms] = useState([]);
-	const [filteredActors, setFilteredActors] = useState([]);
-	const [wordEntered, setWordEntered] = useState("");
+function SearchBar({ placeholder, data, actors }: {placeholder: string, data: object[], actors: object[]}) {
+	const [filteredFilms, setFilteredFilms] = useState<object[]>([]);
+	const [filteredActors, setFilteredActors] = useState<object[]>([]);
+	const [wordEntered, setWordEntered] = useState<string>("");
 
-	const handleFilter = (event: any) => {
-		const searchWord = event.target.value;
+	const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
+		const searchWord: string = event.target.value;
 		setWordEntered(searchWord);
-		const filmsFilter = data.filter((value: any) => {
-			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : null;
+		const filmsFilter: object[] = data.filter((value: any) => {
+			console.log(typeof value)
+
+			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : false;
 		});
 
 		const actorsFilter = actors.filter((value: any) => {

@@ -2,18 +2,18 @@ import data from "../data";
 import {actors} from "../actors";
 import "./Main.scss"
 
-export const Main = ({url}: any) => {
-	const parsedURL  = parseInt(url.slice(1));
-	const actor = actors.map(actor => parsedURL === actor.id ? actor.name : false);
+export const Main = ({url}: {url: string}) => {
+	const parsedURL: number = parseInt(url.slice(1));
+	const actor: (string | false)[] = actors.map(actor => parsedURL === actor.id ? actor.name : false);
 	let content;
 
 	parsedURL >= 100 ?
 		content = data.filter(film => {
-			let actorId = actors.map(actor => parsedURL === actor.id ? actor.id : false);
-			let filmActors = film.actors;
-			let match = [];
-			for (let i = 0; i < filmActors.length; i++) {
-				for (let j = 0; j < actorId.length; j++) {
+			let actorId: (number | false)[] = actors.map(actor => parsedURL === actor.id ? actor.id : false);
+			let filmActors: number[] = film.actors;
+			let match: number[] = [];
+			for (let i: number = 0; i < filmActors.length; i++) {
+				for (let j: number = 0; j < actorId.length; j++) {
 					if (filmActors[i] === actorId[j]) {
 						match.push(filmActors[i]);
 					}
@@ -21,7 +21,7 @@ export const Main = ({url}: any) => {
 			}
 			return match[0];
 		}).map(film => {
-			const {id, image, title, age, tags, description} = film;
+			const {id, image, title, age, tags, description}: {id: number, image: string, title: string, age: string, tags: string, description: string} = film;
 
 			return <div key={id}>
 				<img src={image} alt="" />
@@ -34,7 +34,7 @@ export const Main = ({url}: any) => {
 		content = data.filter(film => {
 			return film.id === parsedURL;
 		}).map(film => {
-			const {id, image, title, age, tags, description} = film;
+			const {id, image, title, age, tags, description}: {id: number, image: string, title: string, age: string, tags: string, description: string} = film;
 
 			return <div key={id}>
 				<img src={image} alt="" />

@@ -2,7 +2,7 @@ import data from "../data";
 import {actors} from "../actors";
 import "./Main.scss"
 
-export const Main = ({url}) => {
+export const Main = ({url}: any) => {
 	const parsedURL  = parseInt(url.slice(1));
 	const actor = actors.map(actor => parsedURL === actor.id ? actor.name : false);
 	let content;

@@ -1,19 +1,19 @@
 import {useState} from "react";
 import "./SearchBar.scss";
 
-function SearchBar({ placeholder, data, actors }) {
+function SearchBar({ placeholder, data, actors }: any) {
 	const [filteredFilms, setFilteredFilms] = useState([]);
 	const [filteredActors, setFilteredActors] = useState([]);
 	const [wordEntered, setWordEntered] = useState("");
 
-	const handleFilter = (event) => {
+	const handleFilter = (event: any) => {
 		const searchWord = event.target.value;
 		setWordEntered(searchWord);
-		const filmsFilter = data.filter((value) => {
+		const filmsFilter = data.filter((value: any) => {
 			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : null;
 		});
 
-		const actorsFilter = actors.filter((value) => {
+		const actorsFilter = actors.filter((value: any) => {
 			return value.name.toLowerCase().includes(searchWord.toLowerCase());
 		});
 
@@ -39,13 +39,13 @@ function SearchBar({ placeholder, data, actors }) {
 			{filteredFilms.length !== 0 && (
 				<div className="dataResult">
 					<h3>Filmy</h3>
-					{filteredFilms.slice(0, 15).map((value, key) => {
+					{filteredFilms.slice(0, 15).map((value: any, key: number) => {
 						return (
-							<>
+							<div key={key}>
 								<a className="dataItem" href={value.id} target="_self">
 								 	<p>{value.title}</p>
 								</a>
-							</>
+							</div>
 						);
 					})}
 				</div>
@@ -54,13 +54,13 @@ function SearchBar({ placeholder, data, actors }) {
 			{filteredActors.length !== 0 && (
 				<div className="dataResult">
 					<h3>Herci</h3>
-					{filteredActors.slice(0, 15).map((value, key) => {
+					{filteredActors.slice(0, 15).map((value: any, key: number) => {
 						return (
-							<>
+							<div key={key}>
 								<a className="dataItem" href={value.id} target="_self">
 									<p>{value.name}</p>
 								</a>
-							</>
+							</div>
 						);
 					})}
 				</div>

@@ -4,13 +4,22 @@ import "./Main.scss"
 
 export const Main = ({url}) => {
 	const parsedURL  = parseInt(url.slice(1));
+	const actor = actors.map(actor => parsedURL === actor.id ? actor.name : false);
 	let content;
-	const actor = actors.map(actor => parsedURL === actor.id ? actor.name : null);
 
 	parsedURL >= 100 ?
 		content = data.filter(film => {
-			// todo: vypíše seznam filmů jen u prvního herce
-			return film.actors === actors.map(actor => parsedURL === actor.id ? actor.id : null)[0];
+			let actorId = actors.map(actor => parsedURL === actor.id ? actor.id : false);
+			let filmActors = film.actors;
+			let match = [];
+			for (let i = 0; i < filmActors.length; i++) {
+				for (let j = 0; j < actorId.length; j++) {
+					if (filmActors[i] === actorId[j]) {
+						match.push(filmActors[i]);
+					}
+				}
+			}
+			return match[0];
 		}).map(film => {
 			const {id, image, title, age, tags, description} = film;
 

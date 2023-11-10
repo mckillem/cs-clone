@@ -1,7 +1,5 @@
-import { useState } from "react";
+import {useState} from "react";
 import "./SearchBar.scss";
-// import SearchIcon from "@material-ui/icons/Search";
-// import CloseIcon from "@material-ui/icons/Close";
 
 function SearchBar({ placeholder, data, actors }) {
 	const [filteredFilms, setFilteredFilms] = useState([]);
@@ -15,13 +13,8 @@ function SearchBar({ placeholder, data, actors }) {
 			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : null;
 		});
 
-		// todo: pokud najdeš herce, tak vrať seznam filmů, ve kterých hraje
 		const actorsFilter = actors.filter((value) => {
-			// pokud najdeš herce
-			// const actors = value.actors.toLowerCase().includes(searchWord.toLowerCase()) ? value.title : null;
-			const actors = value.name.toLowerCase().includes(searchWord.toLowerCase());
-			// tak vrať seznam filmů, ve kterých hraje
-			return actors;
+			return value.name.toLowerCase().includes(searchWord.toLowerCase());
 		});
 
 		if (searchWord === "") {
@@ -33,11 +26,6 @@ function SearchBar({ placeholder, data, actors }) {
 		}
 	};
 
-	// const clearInput = () => {
-	// 	setFilteredData([]);
-	// 	setWordEntered("");
-	// };
-
 	return (
 		<div className="search">
 			<div className="searchInputs">
@@ -47,13 +35,6 @@ function SearchBar({ placeholder, data, actors }) {
 					value={wordEntered}
 					onChange={handleFilter}
 				/>
-				{/*<div className="searchIcon">*/}
-				{/*	{filteredData.length === 0 ? (*/}
-				{/*		<SearchIcon />*/}
-				{/*	) : (*/}
-				{/*		<CloseIcon id="clearBtn" onClick={clearInput} />*/}
-				{/*	)}*/}
-				{/*</div>*/}
 			</div>
 			{filteredFilms.length !== 0 && (
 				<div className="dataResult">
@@ -61,8 +42,6 @@ function SearchBar({ placeholder, data, actors }) {
 					{filteredFilms.slice(0, 15).map((value, key) => {
 						return (
 							<>
-								{/*<Main data={value.title}></Main>*/}
-								{/*<a className="dataItem" href={value.link} target="_blank">*/}
 								<a className="dataItem" href={value.id} target="_self">
 								 	<p>{value.title}</p>
 								</a>
@@ -78,7 +57,6 @@ function SearchBar({ placeholder, data, actors }) {
 					{filteredActors.slice(0, 15).map((value, key) => {
 						return (
 							<>
-								{/*todo: odkaz je na id filmu ne na seznam filmů.*/}
 								<a className="dataItem" href={value.id} target="_self">
 									<p>{value.name}</p>
 								</a>

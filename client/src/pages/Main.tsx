@@ -1,4 +1,4 @@
-import data from "../data";
+import films from "../films";
 import {actors} from "../actors";
 import "./Main.scss"
 
@@ -8,7 +8,7 @@ export const Main = ({url}: {url: string}) => {
 	let content;
 
 	parsedURL >= 100 ?
-		content = data.filter(film => {
+		content = films.filter(film => {
 			let actorId: (number | false)[] = actors.map(actor => parsedURL === actor.id ? actor.id : false);
 			let filmActors: number[] = film.actors;
 			let match: number[] = [];
@@ -31,7 +31,7 @@ export const Main = ({url}: {url: string}) => {
 				<p>{description}</p>
 			</div>
 		}) :
-		content = data.filter(film => {
+		content = films.filter(film => {
 			return film.id === parsedURL;
 		}).map(film => {
 			const {id, image, title, age, tags, description}: {id: number, image: string, title: string, age: string, tags: string, description: string} = film;

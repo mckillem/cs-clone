@@ -1,21 +1,33 @@
 import {ChangeEvent, useState} from "react";
 import "./SearchBar.scss";
 
+interface filmObject {
+	id: number
+	image: string
+	title: string
+	originalTitle: string
+	age: string
+	tags: string
+	actors: []
+	description: string
+}
+
 function SearchBar({ placeholder, data, actors }: {placeholder: string, data: object[], actors: object[]}) {
 	const [filteredFilms, setFilteredFilms] = useState<object[]>([]);
 	const [filteredActors, setFilteredActors] = useState<object[]>([]);
 	const [wordEntered, setWordEntered] = useState<string>("");
+	const films: filmObject;
 
 	const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
 		const searchWord: string = event.target.value;
 		setWordEntered(searchWord);
-		const filmsFilter: object[] = data.filter((value: any) => {
+		const filmsFilter: films[] = data.filter((value: films) => {
 			console.log(typeof value)
 
 			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : false;
 		});
 
-		const actorsFilter = actors.filter((value: any) => {
+		const actorsFilter: object[] = actors.filter((value: any) => {
 			return value.name.toLowerCase().includes(searchWord.toLowerCase());
 		});
 

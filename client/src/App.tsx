@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
     const url: string = window.location.pathname;
+
     return (
         <div className="App">
             <Header></Header>

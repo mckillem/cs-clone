@@ -29,7 +29,7 @@ function SearchBar({ placeholder, films, actors }: {placeholder: string, films: 
 			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase());
 		});
 
-		const actorsFilter = actors.filter((value: ActorObject) => {
+		const actorsFilter: ActorObject[] = actors.filter((value: ActorObject) => {
 			return value.name.toLowerCase().includes(searchWord.toLowerCase());
 		});
 

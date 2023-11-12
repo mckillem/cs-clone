@@ -1,15 +1,16 @@
 import films from "../films";
 import {actors} from "../actors";
 import "./Main.scss"
+import {ActorObject, FilmObject} from "../components/SearchBar";
 
 export const Main = ({url}: {url: string}) => {
 	const parsedURL: number = parseInt(url.slice(1));
-	const actor: (string | false)[] = actors.map(actor => parsedURL === actor.id ? actor.name : false);
+	const actor: string[] = actors.filter((actor: ActorObject): boolean  => parsedURL === actor.id).map((actor: ActorObject) => actor.name);
 	let content;
 
 	parsedURL >= 100 ?
-		content = films.filter(film => {
-			let actorId: (number | false)[] = actors.map(actor => parsedURL === actor.id ? actor.id : false);
+		content = films.filter((film: FilmObject) => {
+			let actorId: number[] = actors.filter((actor: ActorObject):boolean => parsedURL === actor.id).map((actor: ActorObject) => actor.id);
 			let filmActors: number[] = film.actors;
 			let match: number[] = [];
 			for (let i: number = 0; i < filmActors.length; i++) {
@@ -20,7 +21,7 @@ export const Main = ({url}: {url: string}) => {
 				}
 			}
 			return match[0];
-		}).map(film => {
+		}).map((film: FilmObject) => {
 			const {id, image, title, age, tags, description}: {id: number, image: string, title: string, age: string, tags: string, description: string} = film;
 
 			return <div key={id}>
@@ -31,9 +32,9 @@ export const Main = ({url}: {url: string}) => {
 				<p>{description}</p>
 			</div>
 		}) :
-		content = films.filter(film => {
+		content = films.filter((film: FilmObject) => {
 			return film.id === parsedURL;
-		}).map(film => {
+		}).map((film: FilmObject) => {
 			const {id, image, title, age, tags, description}: {id: number, image: string, title: string, age: string, tags: string, description: string} = film;
 
 			return <div key={id}>

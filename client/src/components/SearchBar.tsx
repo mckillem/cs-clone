@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from "react";
 import "./SearchBar.scss";
 
-interface FilmObject {
+export interface FilmObject {
 	id: number;
 	image: string;
 	title: string;
@@ -12,7 +12,7 @@ interface FilmObject {
 	description: string;
 }
 
-interface ActorObject {
+export interface ActorObject {
 	id: number;
 	name: string;
 }
@@ -26,7 +26,7 @@ function SearchBar({ placeholder, films, actors }: {placeholder: string, films: 
 		const searchWord: string = event.target.value;
 		setWordEntered(searchWord);
 		const filmsFilter: FilmObject[] = films.filter((value: FilmObject) => {
-			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase()) ? value.id : false;
+			return value.title.toLowerCase().includes(searchWord.toLowerCase()) || value.originalTitle.toLowerCase().includes(searchWord.toLowerCase());
 		});
 
 		const actorsFilter = actors.filter((value: ActorObject) => {

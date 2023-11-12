@@ -1,4 +1,6 @@
-const films = [ {
+import {FilmObject} from "./components/SearchBar";
+
+const films: FilmObject[] = [ {
 		id: 1,
 		image: require("./images/image1.jpg"),
 		title: "Avatar",

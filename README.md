@@ -1,1 +1,1 @@
-#Ukázka v React, Typescript a SCSS
+# Ukázka v React, Typescript a SCSS

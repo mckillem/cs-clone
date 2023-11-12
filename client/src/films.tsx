@@ -1,15 +1,4 @@
-interface FilmObject {
-	id: number;
-	image: string;
-	title: string;
-	originalTitle: string;
-	age: string;
-	tags: string;
-	actors: number[];
-	description: string;
-}
-
-const films: FilmObject[] = [ {
+const films = [ {
 		id: 1,
 		image: require("./images/image1.jpg"),
 		title: "Avatar",

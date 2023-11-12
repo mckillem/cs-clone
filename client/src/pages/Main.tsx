@@ -32,7 +32,7 @@ export const Main = ({url}: {url: string}) => {
 				<p>{description}</p>
 			</div>
 		}) :
-		content = films.filter((film: FilmObject) => {
+		content = films.filter((film: FilmObject): boolean => {
 			return film.id === parsedURL;
 		}).map((film: FilmObject) => {
 			const {id, image, title, age, tags, description}: {id: number, image: string, title: string, age: string, tags: string, description: string} = film;
